@@ -12,3 +12,32 @@ label {
 input[type=text], input[type=password], textarea {
     width: 150px;
 }
+
+#main {
+    background-color: #eee
+}
+
+#footer {
+    background-color: #222;
+    color: #eee;  
+}
+
+#footer a:visited {
+    color: #eee
+}
+
+.avatar {
+    max-width: 50px;
+}
+
+.menu {
+    font-size: 12px;
+}
+
+    .menu li {
+        list-style-type: none;
+    }
+
+    .menu li.active {
+        font-weight: bold;
+    }
