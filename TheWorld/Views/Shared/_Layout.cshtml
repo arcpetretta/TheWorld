@@ -10,9 +10,9 @@
         <!--<img alt="avatar" class="avatar"/>-->
         <span id="username">Arc Petretta</span>
         <ul class="menu">
-            <li class="active"><a href="#">Home</a>
-            <li><a href="#">About</a>
-            <li><a href="#">Contact</a>
+            <li class="active"><a asp-controller="App" asp-action="Index">Home</a>
+            <li><a asp-controller="App" asp-action="About">About</a>
+            <li><a asp-controller="App" asp-action="Contact">Contact</a>
         </ul>
     </div>
     <div id="wrapper">
@@ -31,6 +31,7 @@
         </div>
 
         <script type="text/javascript" src="~/lib/jquery/dist/jquery.min.js"></script>
+        @RenderSection("scripts", false)
         <script type="text/javascript" src="~/js/site.js">
         </script>
 </body>
