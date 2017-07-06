@@ -1,8 +1,0 @@
-C:\Users\Arcangelo\Documents\Visual Studio 2017\Projects\Examples\m1\TheWorld\TheWorld\bin\Debug\netcoreapp1.1\TheWorld.deps.json
-C:\Users\Arcangelo\Documents\Visual Studio 2017\Projects\Examples\m1\TheWorld\TheWorld\bin\Debug\netcoreapp1.1\TheWorld.runtimeconfig.json
-C:\Users\Arcangelo\Documents\Visual Studio 2017\Projects\Examples\m1\TheWorld\TheWorld\bin\Debug\netcoreapp1.1\TheWorld.runtimeconfig.dev.json
-C:\Users\Arcangelo\Documents\Visual Studio 2017\Projects\Examples\m1\TheWorld\TheWorld\bin\Debug\netcoreapp1.1\TheWorld.dll
-C:\Users\Arcangelo\Documents\Visual Studio 2017\Projects\Examples\m1\TheWorld\TheWorld\bin\Debug\netcoreapp1.1\TheWorld.pdb
-C:\Users\Arcangelo\Documents\Visual Studio 2017\Projects\Examples\m1\TheWorld\TheWorld\obj\Debug\netcoreapp1.1\TheWorld.AssemblyInfo.cs
-C:\Users\Arcangelo\Documents\Visual Studio 2017\Projects\Examples\m1\TheWorld\TheWorld\obj\Debug\netcoreapp1.1\TheWorld.dll
-C:\Users\Arcangelo\Documents\Visual Studio 2017\Projects\Examples\m1\TheWorld\TheWorld\obj\Debug\netcoreapp1.1\TheWorld.pdb
