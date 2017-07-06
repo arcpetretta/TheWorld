@@ -1,0 +1,36 @@
+﻿<head>
+    <title>The World - @ViewBag.Title</title>
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+    <div id="sidebar">
+        <!-- TODO: Add image for user avatar -->
+        <!--<img alt="avatar" class="avatar"/>-->
+        <span id="username">Arc Petretta</span>
+        <ul class="menu">
+            <li class="active"><a href="#">Home</a>
+            <li><a href="#">About</a>
+            <li><a href="#">Contact</a>
+        </ul>
+    </div>
+    <div id="wrapper">
+        <div id="main">
+            <div>
+                <button id="sidebarToggle">Toggle Menu</button>
+            </div>
+            @RenderBody()
+        </div>
+            <div id="footer">
+                <footer>
+                    <p>Designed by Arcangelo Petretta</p>
+                    <p><a href="https://github.com/arcpetretta/TheWorld">Source Code!</a></p>
+                </footer>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="js/site.js">
+        </script>
+</body>
