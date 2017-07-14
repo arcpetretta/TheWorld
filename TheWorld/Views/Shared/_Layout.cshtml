@@ -2,6 +2,9 @@
     <title>The World - @ViewBag.Title</title>
     <meta charset="utf-8" />
 
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="~/lib/bootswatch/superhero/bootstrap.min.css"/>
+    <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
@@ -9,29 +12,59 @@
         <!-- TODO: Add image for user avatar -->
         <!--<img alt="avatar" class="avatar"/>-->
         <span id="username">Arc Petretta</span>
-        <ul class="menu">
+        <ul class="nav">
             <li class="active"><a asp-controller="App" asp-action="Index">Home</a>
             <li><a asp-controller="App" asp-action="About">About</a>
             <li><a asp-controller="App" asp-action="Contact">Contact</a>
         </ul>
     </div>
     <div id="wrapper">
-        <div id="main">
-            <div>
-                <button id="sidebarToggle">Toggle Menu</button>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav navbar-left">
+                    <li>
+                        <button id="sidebarToggle" class="btn btn-primary">
+                            <i class="fa fa-angle-left"></i>
+                        </button>
+                    </li>
+                </ul>
+                <a asp-controller="App" asp-action="Index" class="navbar-brand">The World</a>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" class="btn btn-sm btn-info">
+                            <i class="fa fa-save"></i> Save
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="btn btn-sm btn-info">
+                            <i class="fa fa-print"></i> Print
+                        </a>
+                    </li>
+                </ul>
             </div>
+        </nav>
+
+        <div id="main" class="container-fluid">
             @RenderBody()
         </div>
-            <div id="footer">
+            <div id="footer" class="container-fluid">
                 <footer>
-                    <p>Designed by Arcangelo Petretta</p>
-                    <p><a href="https://github.com/arcpetretta/TheWorld">Source Code!</a></p>
+                    <div class="navbar navbar-inverse navbar-fixed-bottom">
+                        <h4 class="text-center text-info">
+                            Designed by Arcangelo Petretta
+                        </h4>
+                        <div class="text-center">
+                            <h5>
+                                <a class="text-info" href="https://github.com/arcpetretta/TheWorld">Source Code!</a>
+                            </h5>
+                        </div>
+                    </div>
                 </footer>
             </div>
         </div>
 
         <script type="text/javascript" src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="~/js/site.js"></script>
         @RenderSection("scripts", false)
-        <script type="text/javascript" src="~/js/site.js">
-        </script>
 </body>
