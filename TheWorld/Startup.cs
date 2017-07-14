@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using TheWorld.Entities;
 using TheWorld.Services;
 
 namespace TheWorld
@@ -37,6 +38,8 @@ namespace TheWorld
             {
                 // Implement a real Mail Service
             }
+
+            services.AddDbContext<WorldContext>();
 
             services.AddMvc();
         }
