@@ -7,6 +7,8 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
 using TheWorld.Entities;
 using TheWorld.Services;
+using AutoMapper;
+using TheWorld.ViewModels;
 
 namespace TheWorld
 {
@@ -61,6 +63,11 @@ namespace TheWorld
             WorldContextSeedData seeder,
             ILoggerFactory factory)
         {
+            Mapper.Initialize(config =>
+            {
+                config.CreateMap<TripViewModel, Trip>().ReverseMap();
+            });
+
             //ASPNETCORE_ENVIROMNET Variable can be set via project properties.
             if (env.IsEnvironment("Development"))
             {
