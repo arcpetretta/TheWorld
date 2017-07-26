@@ -10,5 +10,9 @@ namespace TheWorld.Entities
         void AddTrip(Trip trip);
 
         Task<bool> SaveChangesAsync();
+
+        Trip GetTripByName(string tripName);
+
+        void AddStop(string tripName, Stop newStop);
     }
 }
