@@ -1,0 +1,36 @@
+﻿@model IEnumerable<TheWorld.Entities.Trip>
+@{ 
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <h1>The World</h1>
+        <p>More to come in the future...</p>
+
+        <form>
+            <div class="form-group">
+                <div>
+                    <label>Date</label>
+                    <input class="form-control"/>
+                </div>
+                <div>
+                    <label>Location</label>
+                    <input class="form-control"/>
+                </div>
+                <div>
+                    <input type="submit" value="Add" class="btn btn-success"s/>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <h2>Map</h2>
+        <ul>
+            @foreach (var item in Model)
+            {
+                <li>@item.Name : @item.DateCreated.ToString("d")</li>
+            }
+        </ul>
+    </div>
+</div>
