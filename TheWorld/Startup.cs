@@ -9,6 +9,8 @@ using TheWorld.Entities;
 using TheWorld.Services;
 using AutoMapper;
 using TheWorld.ViewModels;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace TheWorld
 {
@@ -53,6 +55,17 @@ namespace TheWorld
 
             services.AddLogging();
 
+            services.AddIdentity<WorldUser,IdentityRole>(config => 
+            {
+                config.User.RequireUniqueEmail = true;
+                config.Password.RequiredLength = 8;
+                config.Cookies.ApplicationCookie.LoginPath = "/Auth/Login";
+            })
+            .AddEntityFrameworkStores<WorldContext>();
+
+            services.AddEntityFrameworkSqlServer()
+                .AddDbContext<WorldContext>();
+
             services.AddMvc().AddJsonOptions( config => 
             {
                 config.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
@@ -83,6 +96,9 @@ namespace TheWorld
             }
 
             app.UseStaticFiles();
+
+            app.UseIdentity();
+
             app.UseMvc(config => 
             {
                 config.MapRoute(
