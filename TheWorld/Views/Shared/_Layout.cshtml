@@ -9,13 +9,21 @@
 </head>
 <body>
     <div id="sidebar">
-        <!-- TODO: Add image for user avatar -->
-        <!--<img alt="avatar" class="avatar"/>-->
-        <span id="username">Arc Petretta</span>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <!-- TODO: Add image for user avatar -->
+            <!--<img alt="avatar" class="avatar"/>-->
+            <span id="username">@User.Identity.Name</span>
+        }
         <ul class="nav">
             <li class="active"><a asp-controller="App" asp-action="Index">Home</a>
             <li><a asp-controller="App" asp-action="About">About</a>
             <li><a asp-controller="App" asp-action="Contact">Contact</a>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <li><a asp-controller="App" asp-action="Trips">Trips</a></li>
+                <li><a asp-controller="Auth" asp-action="Logout">Logout</a></li>
+            }
         </ul>
     </div>
     <div id="wrapper">

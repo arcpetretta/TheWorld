@@ -11,6 +11,7 @@ using AutoMapper;
 using TheWorld.ViewModels;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
 
 namespace TheWorld
 {
@@ -66,7 +67,14 @@ namespace TheWorld
             services.AddEntityFrameworkSqlServer()
                 .AddDbContext<WorldContext>();
 
-            services.AddMvc().AddJsonOptions( config => 
+            services.AddMvc(config => 
+            {
+                if (_env.IsProduction())
+                {
+                    config.Filters.Add(new RequireHttpsAttribute());
+                }
+            })
+            .AddJsonOptions( config => 
             {
                 config.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
             });
