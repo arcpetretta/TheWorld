@@ -19,6 +19,7 @@
             <li class="active"><a asp-controller="App" asp-action="Index">Home</a>
             <li><a asp-controller="App" asp-action="About">About</a>
             <li><a asp-controller="App" asp-action="Contact">Contact</a>
+            <li><a asp-controller="Auth" asp-action="Login">Login</a></li>
             @if (User.Identity.IsAuthenticated)
             {
                 <li><a asp-controller="App" asp-action="Trips">Trips</a></li>
