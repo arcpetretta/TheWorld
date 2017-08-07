@@ -25,6 +25,16 @@ namespace TheWorld.Entities
             return _context.Trips.ToList();
         }
 
+        public IEnumerable<Trip> GetTripsByUserName(string name)
+        {
+            _logger.LogInformation($"Retrieving Trips for User: {name}");
+            return _context
+                .Trips
+                .Include(t => t.Stops)
+                .Where(t => t.UserName == name)
+                .ToList();
+        }
+
         public void AddTrip(Trip trip)
         {
             _context.Add(trip);
