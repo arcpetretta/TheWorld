@@ -53,15 +53,24 @@ namespace TheWorld.Entities
                 .FirstOrDefault();
         }
 
-        public void AddStop(string tripName, Stop newStop)
+        public void AddStop(string tripName, Stop newStop, string username)
         {
-            var trip = GetTripByName(tripName);
+            var trip = GetUserTripByName(tripName, username);
 
             if(trip != null)
             {
                 trip.Stops.Add(newStop);
                 _context.Stops.Add(newStop);
             }
+        }
+
+        public Trip GetUserTripByName(string tripName, string username)
+        {
+            _logger.LogInformation($"Getting Trip: \"{tripName}\" & stops for User: {username}.");
+            return _context.Trips
+                .Include(t => t.Stops)
+                .Where(t => t.Name.ToLower() == tripName.ToLower() && t.UserName == username)
+                .FirstOrDefault();
         }
     }
 }
