@@ -30,8 +30,23 @@
             });
 
         vm.addTrip = function () {
-            vm.trips.push({ name: vm.newTrip.name, created: new Date() });
-            vm.newTrip = {};
+
+            vm.isBusy = true;
+            vm.errorMessage = "";
+
+            $http.post("/api/trips", vm.newTrip)
+                .then(function (response) {
+                    //SUCCESS
+                    vm.trips.push(response.data);
+                    vm.newTrip = {};
+
+                }, function () {
+                    //FAIL
+                    vm.errorMessage = "Failed to save new trip";
+                })
+                .finally(function () {
+                    vm.isBusy = false;
+                })
         }
     }
 
