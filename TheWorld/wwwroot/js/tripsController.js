@@ -15,6 +15,7 @@
         vm.newTrip = {};
 
         vm.errorMessage = "";
+
         vm.isBusy = true;
 
         $http.get("/api/trips")
